@@ -76,13 +76,10 @@
 					new THREE.OctahedronGeometry(0.1).translate(0, 0.1, 0),
 					new THREE.IcosahedronGeometry(0.1).translate(0, 0.1, 0),
 					new THREE.DodecahedronGeometry(0.1).translate(0, 0.1, 0)
-			];
+				];
 
-				const geometry = randomGeometry();
-
-				function randomGeometry() {
-					
-					const key = Math.floor(Math.random() * geometries.length);
+				
+				function getGeometry(key) {	
 					console.log('Selected geometry:', key);
 					return geometries[key];
 				}
@@ -90,6 +87,8 @@
 				function onSelect() {
 
 					if ( reticle.visible ) {
+
+						const geometry = getGeometry(Math.floor(Math.random() * geometries.length));
 
 						const material = new THREE.MeshPhongMaterial( { color: 0xffffff * Math.random() } );
 						const mesh = new THREE.Mesh( geometry, material );
