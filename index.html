@@ -120,6 +120,12 @@
 
 				window.addEventListener( 'resize', onWindowResize );
 
+				const geometry = geometries[0];
+				const material = new THREE.MeshPhongMaterial({ color: 0xff0000 });
+				const mesh = new THREE.Mesh(geometry, material);
+				mesh.position.set(0, 0, -0.5); // à 0.5m devant la caméra
+				scene.add(mesh);
+
 			}
 
 			function onWindowResize() {
@@ -133,6 +139,7 @@
 
 			//
 
+			
 			function animate( timestamp, frame ) {
 
 				if ( frame ) {
