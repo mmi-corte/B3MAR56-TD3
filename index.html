@@ -83,6 +83,7 @@
 				function randomGeometry() {
 					const keys = Object.keys(geometries);
 					const key = keys[Math.floor(Math.random() * keys.length)];
+					console.log('Selected geometry:', key);
 					return geometries[key];
 				}
 
