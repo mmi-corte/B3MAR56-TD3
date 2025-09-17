@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "serve --ssl-cert localhost.pem --ssl-key localhost-key.pem -l 3000"
+  },
+  "dependencies": {
+    "localtunnel": "^1.9.2"
+  }
+}
